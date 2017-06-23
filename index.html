@@ -3,8 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <title>OfficeHue</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/canvas.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+            $('#red_light').click(  function () {
+
+                //getLights();
+                putLightsStatus('red');
+            });
+
+            $('#normal_light').click(  function () {
+
+                //getLights();
+                putLightsStatus('normal');
+            });
+        });
+
+        function getLights(){
+
+            var url = "http://10.3.9.52/api/jAX7zVjPIZVEZN6Z-xjIFx5jumO4-G-5g8erVZ7c/lights/5";
+
+            $.getJSON(url, function(data) {
+
+                console.log(data);
+            });
+        }
+
+        function putLightsStatus(hueColor){
+
+            var lightId = $("#lightId").val();
+            var hue = 10000;
+
+            if(hueColor === 'red'){
+                hue = 20;
+            }else if(hueColor === 'normal'){
+                hue = 10000;
+            }
+
+            var url = "http://10.3.9.52/api/jAX7zVjPIZVEZN6Z-xjIFx5jumO4-G-5g8erVZ7c/lights/"+lightId+"/state";
+            var sendData = {"on":true, "sat":254, "bri":254,"hue":hue};
+
+            _ajax_request(url,sendData,putSucces,'PUT');
+        }
+
+        function putSucces(result){
+
+            console.log(result);
+        }
+
+        function _ajax_request(url, data, callback, method) {
+
+            return $.ajax({
+                url: url,
+                method: method,
+                type: 'JSON',
+                data: JSON.stringify(data),
+                success: callback
+            });
+        }
+
+    </script>
 </head>
 <body>
-    <h2>Hello World</h2>
+    <script>
+
+        function toXY(red,green,blue){
+            //Gamma correctie
+            red = (red > 0.04045) ? Math.pow((red + 0.055) / (1.0 + 0.055), 2.4) : (red / 12.92);
+            green = (green > 0.04045) ? Math.pow((green + 0.055) / (1.0 + 0.055), 2.4) : (green / 12.92);
+            blue = (blue > 0.04045) ? Math.pow((blue + 0.055) / (1.0 + 0.055), 2.4) : (blue / 12.92);
+
+            //Apply wide gamut conversion D65
+            var X = red * 0.664511 + green * 0.154324 + blue * 0.162028;
+            var Y = red * 0.283881 + green * 0.668433 + blue * 0.047685;
+            var Z = red * 0.000088 + green * 0.072310 + blue * 0.986039;
+
+            var fx = X / (X + Y + Z);
+            var fy = Y / (X + Y + Z);
+
+
+            return [fx.toPrecision(4),fy.toPrecision(4)];
+        }
+
+       // alert(toXY(255,255,255));
+
+    </script>
+    <input type="text" id="lightId"><br/>
+<button id="red_light">Red</button>
+    <button id="normal_light">Normal</button>
 </body>
 </html>
