@@ -1,0 +1,66 @@
+.flexrow{
+    display: flex;
+    flex-direction: row;
+}
+
+.flexcol{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex1{
+    flex-grow:1;
+}
+.flex2{
+    flex-grow:2;
+}
+.flex3{
+    flex-grow:3;
+}
+.flex4{
+    flex-grow:4;
+}
+.flex5{
+    flex-grow:5;
+}
+.flex6{
+    flex-grow:6;
+}
+.flex7{
+    flex-grow:7;
+}
+.flex8{
+    flex-grow:8;
+}
+
+.flexcol div{
+    border: 1px solid #000000;
+}
+
+.flexrow div{
+     border: 1px solid #000000;
+}
+
+.light-cont{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.light {
+    text-align: center;
+    flex-grow:1;
+    border-radius: 40px;
+    margin-left:auto;
+    margin-right:auto;
+    min-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    max-width: 20px;
+    line-height: 20px;
+    border: 1px solid #000000;
+}
+
+.light:hover{
+    cursor:pointer;
+}

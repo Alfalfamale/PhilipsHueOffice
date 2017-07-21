@@ -62,13 +62,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         var interval = 100;
 
-        keysOfLight = Object.keys(lights);
+        //keysOfLight = Object.keys(lights);
         //console.log(keysOfLight);
         //keysOfLight = ['44','56','5'];
         //keysOfLight = ['1','2','3','4'];
         //keysOfLight = ['50','57','42'];
         //{"alert":"select"}
-        //keysOfLight = backOfficeOrder;
+        keysOfLight = backOfficeOrder;
         timer = 0;
 
 
