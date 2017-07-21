@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var backOfficeOrder = ['48','51','45','50','57','42','44','56','5','7','58','6','62'];
     var timeOut;
+
+    var colors = [255,0,0];
+
     turnAllOn();
 
     $(".light").change(function(){
@@ -68,18 +71,33 @@ document.addEventListener("DOMContentLoaded", function(event) {
         keysOfLight = backOfficeOrder;
         timer = 0;
 
+
         timeOut = setInterval(function() {
 
-                lightId = keysOfLight[timer];
-                putLightsStatus(lightId, 255, 0, 0);
+
+                // shuffle(keysOfLight);
+                // shuffle(colors);
+
+                keysOfLight.forEach((lightId) => {
+
+                    shuffle(colors);
+                    putLightsStatus(lightId, colors[0], colors[1], colors[2]);
+                });
+                // lightId = keysOfLight[timer];
+                // putLightsStatus(lightId, colors[0], colors[1], colors[2]);
                 console.log(timer + "/" + keysOfLight.length);
                 timer++;
                 if(timer >= keysOfLight.length){
 
-                    stopDisco();
+                    //stopDisco();
+                    //reverseDisco();
+                    // keysOfLight.reverse();
+                    // shuffle(colors);
+                    timer = 0;
+
                 }
 
-        }, 1000);
+        }, 300);
 
     }
 
@@ -99,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var url = "http://10.3.9.52/api/jAX7zVjPIZVEZN6Z-xjIFx5jumO4-G-5g8erVZ7c/lights/" + lightId + "/state";
         //var sendData = {"on": lightOn, "sat": 254, "bri": 200, "hue": 10000, "xy":[Number(x),Number(y)]};
         //var sendData = {"effect":"loop"};
-        var sendData = {"xy":[Number(x),Number(y)]};
+        var sendData = {"transitiontime": 1,"xy":[Number(x),Number(y)]};
         _ajax_request(url, sendData, putSucces, 'PUT');
     }
 
@@ -146,5 +164,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
             b: parseInt(result[3], 16)
         } : null;
     }
+
+    function shuffle(a) {
+        for (var i = a.length; i; i--) {
+            var j = Math.floor(Math.random() * i);
+            [a[i - 1], a[j]] = [a[j], a[i - 1]];
+        }
+    }
+
 
 });
