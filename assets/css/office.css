@@ -1,4 +1,30 @@
 body{
 
-   /* background-color:lightgrey;*/
+}
+
+.office{
+
+    height: 1000px;
+    width: 347px;
+
+    margin:30px auto auto auto;
+    position: relative;
+
+    /* transform: scale(0.5, 0.5); */
+}
+
+.top_office_section{
+
+    position: absolute;
+    width: 100%;
+    height: 258px;
+    top:0;
+}
+
+.bottom_office_section{
+
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height: calc(1000px - 258px);
 }
