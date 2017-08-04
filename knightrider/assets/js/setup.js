@@ -269,7 +269,7 @@ function putGroupStatus(groupId, hubId, r, g, b, transitionTime, bri) {
 
                 if(part.success[key] != bri){
 
-                    console.log('something going wrong here!', response);
+                    //console.log('something going wrong here!', response);
                 }
             }
         });

@@ -81,7 +81,7 @@ function loopNightRider(order, totalTime) {
         // Next step not available, flip step and direction
         if (!order[currentStep + step]) {
 
-            console.log("Take it back now y'all");
+            //console.log("Take it back now y'all");
             currentlyGoingUp = !currentlyGoingUp;
             step *= -1;
         }
@@ -100,12 +100,12 @@ function setGroups(currentGroups, bri, transitionTime) {
         for (let i = 0; i < currentGroups.length; i++) {
 
             group = currentGroups[i];
-            console.log(group.lights, bri);
+            //console.log(group.lights, bri);
 
             let lightNr = 0;
             group.lights.forEach((lightId) => {
                 setTimeout(() => {
-                    console.log('Setting light:', lightId, bri);
+                    //console.log('Setting light:', lightId, bri);
                     putLightStatus(lightId, group.hubId, 255, 0, 0, transitionTime, bri);
                 }, 150 * lightNr);
 
