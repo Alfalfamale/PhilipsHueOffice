@@ -7,84 +7,75 @@
     <link rel="stylesheet" type="text/css" href="assets/css/teams.css">
     <link rel="stylesheet" type="text/css" href="assets/css/office-flex.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="assets/js/colors.js"></script>
+    <script src="../json/officeMapping.js"></script>
+    <script src="assets/js/setup.js"></script>
+    <script src="assets/js/lightControl.js"></script>
 </head>
 <body>
-   <div class="office">
-       <div class="top_office_section flexrow">
-           <div class="flex4">
-           </div>
-           <div class="flex3 flexcol">
-               <div class="flex8 lxg team"></div>
-               <div class="flex1 meeting-room"></div>
-           </div>
-           <div class="flex4 flexcol">
-               <div class="flex3 ua team"></div>
-               <div class="flex3 house-stark team"></div>
-           </div>
-       </div>
-       <div class="bottom_office_section flexrow">
-           <div class="flex2 flexcol">
-               <div class="flex3"></div>
-               <div class="flex3"></div>
-               <div class="flex3"></div>
-               <div class="flex2"></div>
-               <div class="flex2"></div>
-               <div class="flex4"></div>
-               <div class="flex4"></div>
-               <div class="flex4"></div>
-               <div class="flex3"></div>
-           </div>
-           <div class="path-1"></div>
-           <div class="flex3 flexcol">
-               <div class="flex5 dev-ops team">
-                   <div class="light-cont-row flexcol">
-                       <input type="color" class="light" id="3" value="#ffffff">
-                       <input type="color" class="light" id="2" value="#ffffff">
-                       <input type="color" class="light" id="4" value="#ffffff">
-                       <input type="color" class="light" id="1" value="#ffffff">
-                   </div>
-               </div>
-               <div class="flex1 meeting-room team"></div>
-               <div class="flex3"></div>
-               <div class="flex1 meeting-room team"></div>
-               <div class="flex2"></div>
-               <div class="flex3"></div>
-               <div class="flex2"></div>
-               <div class="flex2"></div>
-               <div class="flex3"></div>
-           </div>
-           <div class="path-1"></div>
-           <div class="flex2 flexcol">
-               <div class="flex3 x-minions team">
-                   <div class="light-cont flexrow">
-                       <input type="color" class="light" id="44" value="#ffffff">
-                       <input type="color" class="light" id="56" value="#ffffff">
-                       <input type="color" class="light" id="5" value="#ffffff">
-                   </div>
-               </div>
-               <div class="flex3 addams-f team">
-                   <div class="light-cont flexrow">
-                       <div class="light" id="50">50</div>
-                       <div class="light" id="57">57</div>
-                       <div class="light" id="42">42</div>
-                   </div>
-               </div>
-               <div class="flex3 product-i team">
-                   <div class="light-cont flexrow">
-                       <div class="light" id="48">48</div>
-                       <div class="light" id="51">51</div>
-                       <div class="light" id="45">45</div>
-                   </div>
-               </div>
-               <div class="flex3"></div>
-               <div class="flex2"></div>
-               <div class="flex4"></div>
-               <div class="flex4"></div>
-               <div class="flex4"></div>
-               <div class="flex3"></div>
-           </div>
-       </div>
-   </div>
+<div>
+    <div class="groupControl">
+        <h3>Group Control</h3>
+        <select class="groupSelect">
+        </select><br/>
+        <input type="color" class="groupColor"/>
+    </div>
+    <div class="enableKnightRider">
+        <h3>Enable KnightRider</h3>
+        <button class="turnOnKnightRider">Turn on knightrider</button>
+        <br>
+        <button class="turnOffKnightRider">Turn off knightrider</button>
+    </div>
+</div>
+<div class="office">
+    <div class="top_office_section flexrow">
+        <div class="flex4 gameroom">
+        </div>
+        <div class="flex3 flexcol">
+            <div class="flex8 team" data-team="lxg"></div>
+            <div class="flex1 meeting-room"></div>
+        </div>
+        <div class="flex4 flexcol">
+            <div class="flex3 team" data-team="ua"></div>
+            <div class="flex3 team" data-team="hs"></div>
+        </div>
+    </div>
+    <div class="bottom_office_section flexrow">
+        <div class="flex2 flexcol">
+            <div class="flex3" data-team="ci1"></div>
+            <div class="flex3" data-team="ci2"></div>
+            <div class="flex3" data-team="ci3"></div>
+            <div class="flex2" style="background-color: black"></div>
+            <div class="flex2" style="background-color: black"></div>
+            <div class="flex4" data-team="uv3"></div>
+            <div class="flex4" data-team="cs"></div>
+            <div class="flex4" style="background-color: grey"></div>
+            <div class="flex3"></div>
+        </div>
+        <div class="path-1"></div>
+        <div class="flex3 flexcol">
+            <div class="flex5 team" data-team="devops"></div>
+            <div class="flex1 meeting-room team"></div>
+            <div class="flex3"></div>
+            <div class="flex1 meeting-room team"></div>
+            <div class="flex2"></div>
+            <div class="flex3"></div>
+            <div class="flex2"></div>
+            <div class="flex2"></div>
+            <div class="flex3"></div>
+        </div>
+        <div class="path-1"></div>
+        <div class="flex2 flexcol">
+            <div class="flex3 team" data-team="xm"></div>
+            <div class="flex3 team" data-team="af"></div>
+            <div class="flex3 team" data-team="pi"></div>
+            <div class="flex2" style="background-color: black"></div>
+            <div class="flex2" style="background-color: black"></div>
+            <div class="flex4" data-team="uv1"></div>
+            <div class="flex4" data-team="uv2"></div>
+            <div class="flex4" data-team="pc"></div>
+            <div class="flex3" style="background-color: black"></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,126 @@
+{
+  backOffice:{
+    username:"jAX7zVjPIZVEZN6Z-xjIFx5jumO4-G-5g8erVZ7c",
+    bridgeIp: "10.3.9.52",
+    groups:{
+      ua:{
+        config:"block",
+        subgroups:{
+          right: 0,
+          backFront:0
+        },
+        lights:["6","62","7","58"]
+      },
+      lxg:{
+        config:"vrow",
+        subgroups:{
+          middle: 0,
+          backFront:0
+        },
+        lights:["60","54","9","61","59","8"]
+      },
+      xm:{
+        config:"hrow",
+        subgroups:{
+          right: 1,
+          backFront:1
+        },
+        lights:["5","56","44"]
+      },
+      af:{
+        config:"hrow",
+        subgroups:{
+          right: 2,
+          backFront:2
+        },
+        lights:["42","57","50"]
+      },
+      pi:{
+        config:"hrow",
+        subgroups:{
+          right: 3,
+          backFront:3
+        },
+        lights:["48","51","45"]
+      },
+      devops:{
+        config:"vrow",
+        subgroups:{
+          middle: 1,
+          backFront:1
+        },
+        lights:["3","2","4","1"]
+      },
+      ci1:{
+        config:"hrow",
+        subgroups:{
+          left: 0,
+          backFront:1
+        },
+        lights:["40","11","41"]
+      },
+      ci2:{
+        config:"hrow",
+        subgroups:{
+          left: 1,
+          backFront:2
+        },
+        lights:["47","43","55"]
+      },
+      ci3:{
+        config:"hrow",
+        subgroups:{
+          left: 2,
+          backFront:3
+        },
+        lights:["46","49","52"]
+      }
+    }
+  },
+  frontOffice: {
+    username: "-4yfT4pui4L14HxmJ5GMVwvsnNDDF2bKijGC0485",
+    bridgeIp: "10.3.9.50",
+    groups: {
+      uv1: {
+        config: "block",
+        subgroups: {
+          right: 4,
+          backFront: 4
+        },
+        lights: ["22", "24", "23", "21"]
+      },
+      uv2: {
+        config: "block",
+        subgroups: {
+          right: 5,
+          backFront: 5
+        },
+        lights: ["18", "17", "19", "20"]
+      },
+      pc: {
+        config: "block",
+        subgroups: {
+          right: 6,
+          backFront: 6
+        },
+        lights: ["7", "8", "3", "1","2"]
+      },
+      uv3: {
+        config: "block",
+        subgroups: {
+          left: 3,
+          backFront: 4
+        },
+        lights: ["10", "9", "11", "12"]
+      },
+      cs: {
+        config: "block",
+        subgroups: {
+          left: 4,
+          backFront: 5
+        },
+        lights: ["15", "16", "14", "13"]
+      }
+    }
+  }
+}

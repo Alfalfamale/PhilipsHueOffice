@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Hue Groups</title>
+    <script src="../json/officeMapping.js"></script>
+</head>
+<body>
+    <h2>Create Hue Groups</h2>
+    <script>
+
+
+
+        let url = "http://"+hubIp+"/api/"+hubUsername+"/lights/" + lightId + "/state";
+        let sendData = {"transitiontime": 1, "bri":200, "xy":[Number(x),Number(y)]};
+        _ajax_request(url, sendData, putSucces, 'PUT');
+
+
+        function _ajax_request(url, data, callback, method) {
+
+            return $.ajax({
+                url: url,
+                method: method,
+                type: 'JSON',
+                data: JSON.stringify(data),
+                success: callback
+            });
+        }
+    </script>
+</body>
+</html>

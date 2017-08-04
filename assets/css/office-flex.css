@@ -1,26 +1,11 @@
-.flexrow, .hrow{
-     display: flex;
-     flex-direction: row;
- }
-
-.flexcol, .vrow{
-    display: flex;
-    flex-direction: column;
-}
-
-.vrow > input:nth-child(even){
-    margin-bottom: 10px;
-}
-
-.block{
-
-}
-
-.block div{
-    border-style:none !important;
+.flexrow{
     display: flex;
     flex-direction: row;
-    margin-top:5px;
+}
+
+.flexcol{
+    display: flex;
+    flex-direction: column;
 }
 
 .flex1{
@@ -53,7 +38,7 @@
 }
 
 .flexrow div{
-      border: 1px solid #000000;
+     border: 1px solid #000000;
 }
 
 .light-cont{
